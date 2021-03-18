@@ -333,39 +333,86 @@ The initial wireframes designed and developed for Workout Jungle maintained thei
 
 ### **Functionality/features:**
 
+Workout Jungle's features and functionality steam from the need to meet user requirements defined above in user stories. Individually each feature has a core function, in unison they provide a user-friendly space in which user can buy and sell listings in a safe and friendly environment.
+
+#### **Home Page:**
+
+The home page provides any user to the site with the terms and conditions in which they must abide to. It also blocks and non signed in users access to the rest of the site and requires all users to be signed in with an account to proceed.
+
 ![Workout Jungle Screenshot](./docs/img/sc_home_page.png)
 
 #### **Listings System:**
 
+The listing system allows the core function of the site to be fulfilled; the ability to post and view fitness equipment for sale.
+
+A user can access the Post New Listing Page and quickly and easily post a new listing with ease. With predefined selections for condition and listing type allows Workout Jungle to have some control of the listings being posted. Validations on the back end are also in place to prevent from to little or to much information being provided.
+
 ![Workout Jungle Screenshot](./docs/img/sc_new_listing.png)
+
+All Listing Page allows users to view all listings on the site and view said listing in the Show Page. As mentioned above, this page has ana admin feature in which they have access to a delete function for each listing(if said listing violates the terms and conditions).
+
 ![Workout Jungle Screenshot](./docs/img/sc_all_listings.png)
+
 ![Workout Jungle Screenshot](./docs/img/sc_all_listings_mobile.png)
+
+My Listing Page allows users to view their listings only and edit or delete said listing. If a user tries and accesses listings that do not belong to them, they will be redirected and alerted that that was not for them to view.
+
 ![Workout Jungle Screenshot](./docs/img/sc_my_listings.png)
+
 ![Workout Jungle Screenshot](./docs/img/sc_my_listings_mobile.png)
+
+The Show Page allows users to have a closer look at the listings themselves. The page allows a user to either add said listing to their wish list, message the seller directly or return to the All Listings Page.
+
 ![Workout Jungle Screenshot](./docs/img/sc_show_page.png)
+
 ![Workout Jungle Screenshot](./docs/img/sc_show_page_mobile.png)
 
 #### **User System:**
 
+The user system built through devise allows the very backbone of the application to operate upon. Users currently can sign u, sign in and edit their profile.
+
+The Sign Up Page contains a basic form in which a user can assign a username, an email and password to their account. Built with simple_forms it consists of a basic layout and desgin that is user-friendly and safe.
+
 ![Workout Jungle Screenshot](./docs/img/sc_sign_up.png)
+
+The Sign In Page twins the Sign Up Page in its simplistic nature and was developed through the combination of devise, simle_forms and bootstrap.
+
 ![Workout Jungle Screenshot](./docs/img/sc_log_in_mobile.png)
+
+The user system has a Edit Profile Page in which users can freely change their password for any reason. There is no limit or lockout period currently for this feature.
+
 ![Workout Jungle Screenshot](./docs/img/sc_edit_profile.png)
 
 #### **Admin System:**
 
+The Admin system was developed through devise as an extension of the user system. Its main function is to provide some form of authority throughout the application. Currently a admin can only be created by seeding them in by the ```rails db:seed``` command or if a established admin assigns it through the admin Dashboard.
+
+The admin dashboard displays to all current users and admins of Workout Jungle. It also provides two main functions next to each users name, assign admin and delete user. An admin has the power to promote another user(if trusted and reliable) to have the role of admin. An admin can also delete any user who breaks the terms and conditions listed on the home page.
+
 ![Workout Jungle Screenshot](./docs/img/sc_admin.png)
+
+Another feature of an admin is shown on the All Listings page, as shown below and explained throughout this document.
+
+The difference between a user and an admin viewing this page is clearly displayed below. 
 ![Workout Jungle Screenshot](./docs/img/sc_all_listings.png)
+
 ![Workout Jungle Screenshot](./docs/img/sc_user_admin.png)
 
 #### **Responsive Navbar:**
+
+The Navbar was created using Bootstrap and was desgined to have a responsive feel and abide by the applications mobile first desgin architecture. It allows the user to have a smooth manner in which to navigate throughout Workout Jungle various pages. It shares the same desgin across all devices and does not negatively impose on the remaining elements of the site.
 
 ![Workout Jungle Screenshot](./docs/img/sc_navbar_mobile.png)
 
 #### **Filter System:**
 
+The filter system allows users on both the All Listings and My Listings Pages to view certain listings depending on the listing type. It allows the user to save time searching and scrolling for hundreds of listings and provides results pertaining to that listing type in seconds.
+
 ![Workout Jungle Screenshot](./docs/img/sc_filter.png)
 
 #### **Message System:**
+
+The message system allows users to message each other users and discuss possible settlements of fitness equipment alongside delivery and payment options.
 
 ![Workout Jungle Screenshot](./docs/img/sc_inbox_page.png)
 ![Workout Jungle Screenshot](./docs/img/sc_conv.png)
@@ -373,7 +420,17 @@ The initial wireframes designed and developed for Workout Jungle maintained thei
 
 #### **Wish List:**
 
+The Wish List feature allows users to "bank" or 'store their favourite listings in one space. The user can then return and view those listings without needing to search for them. The Wish List page display a number of indicators and functions to the user as well, these include:
+
+- Important facts about the listing
+- A link to view the listing
+- Item quanitity for each line item
+- Total price of all items within the user's Wish List
+- The ability to remove items or remove duplicates
+- Delete the Wish List
+
 ![Workout Jungle Screenshot](./docs/img/sc_wish_list.png)
+
 ![Workout Jungle Screenshot](./docs/img/sc_wish_list_mobile.png)
 
 ### **ERD:**
