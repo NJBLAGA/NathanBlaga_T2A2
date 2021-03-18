@@ -184,7 +184,7 @@ Studies have shown that exercise is a vital key in combating stress, dealing wit
 
 ### **Purpose:**
 
-The original conception of Workout Jungle was to provide a marketplace in which Australian consumers could buy and sell new and used fitness equipment. While there are already various competing sites such as; graysfitness.com.au and gymsolutions.com.au, covid-19 created a ongoing demand for Australian consumers to continue exercising at home. Whether the demand is due to social media fads,  maintaining a healthy lifestyle (physically or mentally) Covid-19 has forced consumers to invest more into their home gyms. Workout Jungle has a primary goal on bringing buyers and sellers together in a safe, protected and user-friendly space. As of lunch it's various features allow the site to achieve these goals, with planned feature updates scheduled to roll out over the next year to not only improve our user experience but ultimately become the top Australian fitness gym marketplace.
+The original conception of Workout Jungle was to provide a marketplace in which Australian consumers could buy and sell new and used fitness equipment. While there are already various competing sites such as; graysfitness.com.au and gymsolutions.com.au, covid-19 created a ongoing demand for Australian consumers to continue exercising at home. Whether the demand is due to social media fads,  maintaining a healthy lifestyle (physically or mentally) Covid-19 has forced consumers to invest more into their home gyms. Workout Jungle has a primary goal on bringing buyers and sellers together in a safe, protected and user-friendly space. As of launch it's various features allow the site to achieve these goals, with planned feature updates scheduled to roll out over the next year to not only improve our user experience but ultimately become the top Australian fitness gym marketplace.
 
 ### **Target Audience:**
 
@@ -243,7 +243,7 @@ The sites primary goal is to provide a marketplace for buyers and sellers throug
 
 The tasks and features comprised of Workout Jungle's development were allocated and tracked through the below trello board. Following an agile methodology each feature of the application was developed over multiple sprints. Each sprint/feature was allocated a time frame for development, testing, integration and deployment.
 
-**Workout Jungle Trello board: https://trello.com/b/KgPASnGD/workout-jungle**
+#### **Workout Jungle Trello board: https://trello.com/b/KgPASnGD/workout-jungle**
 
 ![Workout Jungle Trello](./docs/img/trello_workout_jungle.png)
 
@@ -402,6 +402,7 @@ The difference between a user and an admin viewing this page is clearly displaye
 
 The Navbar was created using Bootstrap and was desgined to have a responsive feel and abide by the applications mobile first desgin architecture. It allows the user to have a smooth manner in which to navigate throughout Workout Jungle various pages. It shares the same desgin across all devices and does not negatively impose on the remaining elements of the site.
 
+![Workout Jungle Screenshot](./docs/img/sc_nav_desktop.png)
 ![Workout Jungle Screenshot](./docs/img/sc_navbar_mobile.png)
 
 #### **Filter System:**
@@ -433,32 +434,268 @@ The Wish List feature allows users to "bank" or 'store their favourite listings 
 
 ![Workout Jungle Screenshot](./docs/img/sc_wish_list_mobile.png)
 
-### **ERD:**
-
-![Workout Jungle ERD](./docs/img/workout_jungle_erd.png)
-
 ### **High-level components:**
 
-- rails heroku, heroku, any software
+![Workout Jungle Screenshot](./docs/img/workout_jungle_mvc_model.png)
+
+### **Third Party Services:**
+
+### **ERD:**
+
+![Workout Jungle ERD](./docs/img/workout_jungle_in_erd.png)
+
+The above ERD represents Workout Jungle's initial database design and structure. It consists of the following entities:
+
+- **Users:** Contains information related to the user; username, email, password, an admin foreign key and has a primary key of the user_id. Users can have zero to many conversations, while a conversation can only belong to one user with another user. A user can also have zero to many listings and zero to many carts. However a listing and a cart can only belong to one user. Finally a user does not have to be an admin, but an admin needs to belong to one user.
+- **Admins:** Contains a primary key of admin_id and a admin only password. Admins need to belong to one user, yet a user does not need to be an admin(optional).
+- **Listings:** Contains a primary key of listings_id, and houses information about each listing; title, description, condition, price, listing_type alongside foreign keys for the images and users tables. Listings can belong to zero to many carts, while a cart has one to many listings. A listing must have one image, and an image must belong to one listing. A listing belongs to one user, but a user has many listings.
+- **Images:** The images table hold a primary key of image_id and the following; name of image, file type, file size and storage(local or cloud based). An image belongs to one listing and a listing has one image.
+- **Carts:** The Carts table has a primary key of cart_id, contains the quantity of the item within the cart itself and two foreign keys belonging to users and listings. A cart belongs to one user while a user can have zero to many carts.
+- **Conversations:** The Conversations table has a primary key of conversations_id with two main columns of sender_id and recipient_id a foreign key to the user table. A conversation belongs to one user with another user, while a user can have zero to many conversations. A conversation has zero to many messages, while a message belongs to one conversation.
+- **Messages:** Contains a primary key of message_id, every message has a body of text, and a foreign key to the conversations table. A message belongs to one conversation while a conversation has many messages.
+
+### **Database Schema Design:**
+
+Below Workout Jungle's Database Schema shows that through development several changes occurred that altered the tables within the database but their relationships with each other.
+
+```r
+ActiveRecord::Schema.define(version: 2021_03_12_023809) do
+
+  enable_extension "plpgsql"
+    # These are extensions that must be enabled in order to support this database
+    # Created from active storage install command
+  create_table "active_storage_attachments", force: :cascade do |t|
+    # Name of uploaded attachment
+    t.string "name", null: false
+    # Type of file uploaded
+    t.string "record_type", null: false
+    # Id given to each attachment
+    t.bigint "record_id", null: false
+    # Id given to blob/image itself
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    # t.index is adding a database index to the referenced column, allows the model to query more efficiently based on said index
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    # t.index is adding a database index to the referenced column, allows the model to query more efficiently based on said index
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+ 
+  create_table "active_storage_blobs", force: :cascade do |t|
+    # Image Table used to hold images uploaded by users.
+    # Created from active storage install command
+    # Key indicator assigned to an image
+    t.string "key", null: false
+    #Filename of image
+    t.string "filename", null: false
+    # Type of MIME type of uploaded file
+    t.string "content_type"
+    #Attached data to image(filename,content type etc)
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    # t.index true means it is adding a database index to the referenced column, the role of indexes aids in speeding up queries. 
+    # Without an index, the database would need to check every record in the projects table, one by one, until a match is found.
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+ 
+  create_table "admins", force: :cascade do |t|
+    # Created when devise command was run to create the admin model
+    # Should be noted that admin model does not require admin only passwords, emails or usernames, it relies on the username table
+    # Admins email set to default until admin enters it(not needed in Workout Jungle structure)
+    t.string "email", default: "", null: false
+    # Admins password set to default until admin enters it(not needed in Workout Jungle structure)
+    t.string "encrypted_password", default: "", null: false
+    # Database calls this token when user wishes to store a new password in place of their old one
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    # t.index is adding a database index to the referenced column, allows the model to query more efficiently based on said index
+    t.index ["email"], name: "index_admins_on_email", unique: true
+    # t.index is adding a database index to the referenced column, allows the model to query more efficiently based on said index
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "carts", force: :cascade do |t|
+    # Created with a cart migration
+    # Carts table acts as a storage to hold a users wish list, they hold line_items which house the listings(items) themselves
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    # Created when conversation model was scaffolded
+    # Each user is assigned a sender_id and recipient_id for every conversation they have with another user
+    # Example: if Tom messages Kate, Tom is assigned a sender_id, while Kate is assigned a recipient_id, however the roles would be reversed if Kate messaged Tom
+    # The model than queries based on the two indexes when creating the conversation between the two users
+    t.integer "sender_id"
+    t.integer "recipient_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    # Created with line_item migration
+    # Foreign key for listing_id
+    t.bigint "listing_id", null: false
+    # Foreign key for cart_it
+    t.bigint "cart_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    # A value that represents the amount an item is represented in the line_item(a counter), for example: 20kg Plate x 2 (meaning there are two plates within that line item)
+    t.integer "quantity", default: 1
+    # t.index is adding a database index to the referenced column, allows the model to query more efficiently based on said index
+    t.index ["cart_id"], name: "index_line_items_on_cart_id"
+    # t.index is adding a database index to the referenced column, allows the model to query more efficiently based on said index
+    t.index ["listing_id"], name: "index_line_items_on_listing_id"
+  end
+
+  create_table "listings", force: :cascade do |t|
+    # Created when listing model was scaffolded
+    # A listing has a title
+    t.string "title"
+    # A listing has a description
+    t.text "description"
+    # A listing has a condition
+    t.string "condition"
+    # A listing has a price with a default of $0
+    t.decimal "price", precision: 5, scale: 2, default: "0.0"
+    # A listing has a listing_type(category)
+    t.string "listing_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    # Foreign key of user_id to associate one listing to one user
+    t.integer "user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    # Created when message model was scaffolded
+    # A message has a body of text displaying related information between users
+    t.text "body"
+    # A message belongs to one conversation (foreign key)
+    t.bigint "conversation_id"
+    # A message belongs to one user (foreign key)
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    # t.index is adding a database index to the referenced column, allows the model to query more efficiently based on said index
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+     # t.index is adding a database index to the referenced column, allows the model to query more efficiently based on said index
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    # Created when devise command was run to create the user model
+    # Each user has an email, default to an empty string till they sign up
+    t.string "email", default: "", null: false
+    # Each user has an password default to an empty string till they sign up
+    t.string "encrypted_password", default: "", null: false
+    # Database calls this token when user wishes to store a new password in place of their old one
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    # Each user has an username, default to an empty string till they sign up
+    t.string "username"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    # By default admin for all users is set to false, when set to true through seeding, or admin dashboard, they are considered an admin
+    t.boolean "admin", default: false
+    # t.index is adding a database index to the referenced column, allows the model to query more efficiently based on said index
+    t.index ["email"], name: "index_users_on_email", unique: true
+    # t.index is adding a database index to the referenced column, allows the model to query more efficiently based on said index
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+  #Adding foreign keys to tables:
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "line_items", "carts"
+  add_foreign_key "line_items", "listings"
+end
+```
+
+- **Users/Admin:** Utilising the devise gem, the users and admins table reflects their original desgin shown in the above ERD. However after the first sprint, it was decided to change the foreign key of admin_id into a boolean. Used as a "switch", the boolean allows an admin to toggle it on to assign another user as an admin.
+- **Listings:** The listings kept the same structure its ERD counterpart had, only difference is its image_id was removed, and through active storage and and image is attached to each listing through a blob_id. An listing has one image attached, and an image belongs to one listing.
+- **Active_storage_blobs:** Through active storage, this table was created to store all images uploaded by users, and indexes blob_id to the listings they are attached to.
+- **Carts/Line_items:** The Carts table was spilt into two separate tables; carts and line items. The Cart table holds user carts(wish lists) and houses the line items. The Line_items table contain one attribute of quantity which is assigned to the copies of listings placed within one line item. It then has foreign keys to the listings and cart id.
+- **Conversations/Messages:**  The Conversation table retains its sender_id and recipient_id yet removed the foreign key to users table, which was added to the messages table. When the conversations controller is called to create a new conversation, it assign the current user with the sender_id and the other user with a recipient_id. The messages table then holds the actual body of text exchanged each time by the two users, with foreign keys referencing users and conversations table. This allows the message model to effectively and efficiently query the database base don those two indexes.
 
 ### **Model Relationships**
-active record understand and explain
 
-ENQUIRE
+Below are all model relationships present in Workout Jungle's source code.
+
+- **User:**  
+Similar to th ERD, the user model has a many listings association, as in a user can have zero to many listings on the site. Due to the dependent: destroy, if a user is ,deleted from the database, then all their associated listings will be deleted as well. This prevents any orphan listings being left behind.
+
+  ```r
+  has_many :listings, dependent: :destroy
+  ```
+
+- **Listing:**  
+
+  The listing model shows us that a listing belongs to one user, and making it optional means a user may have zero to many listings, the relationship does not require a user to have a minimum of one listing.
+
+  A listing has one attached image which allows a user to attach an image every time they wish to post a new listing. Every time a listing is called due to this association, we can fetch the associated image belonging to that listing as well.
+
+  A listing has many line_items refers to the idea that a listing can belong to multiple carts9wish lists). If a user adds a particular listing to their cart, it does not prevent another user from adding it to their cart.
+
+  ```r
+    belongs_to :user, optional: true
+    
+    has_one_attached :image
+  
+    has_many :line_items
+  ```
+
+- **Cart:**
+
+  The cart model has many line items, meaning that a user can add several different listings to a cart, and that cart can hold all line_items needed to house the listings. Due to the dependent: destroy function, whenever a cart is destroy by the user the line_items it housed will be destroyed as well, preventing any orphan line_items remaining.
+
+  ```r
+   has_many :line_items, dependent: :destroy
+  ```
+
+- **Line_item:**
+
+  The Line_item model defines relationship in which a line_item belongs particular listing and a particular cart. If a line_item is currently housing one item(listing) it cannot house another, instead another line_item is created to house the new listing. Likewise once a line_item is created for a cart, it is unique for that cart_id and cannot be placed within another cart. Once agian a new line_item would need to be created and place within that new cart.
+
+  ```r
+  belongs_to :listing
+
+  belongs_to :cart
+  ```
+
+- **Conversation:**
+
+  The conversation model defines that a conversation belongs to a sender_id and recipient_id as foreign keys. This can be explained through the scope :between defined in its model as well. When called upon the scope through the controller assigns two ids of sender and recipient. Using the example from above; Kate spots a listing she wishes to find out more about, she notices the listing was posted by Mark. Kate then wishes to send Mark a message. When Kate clicks on the message user button, it will direct to Mark's message page because it assigns Kate with the sender_id and the listings user with the recipient_id. If the roles were reversed, Mark would have a sender_id and Kate would have been assigned with the recipient_id. Once both ids have been assigned the controller calls the create method and creates a conversation based on the two user ids. Hence a conversation belongs to a sender_id and a recipient id. If either user is deleted from the database, then that conversation would be deleted as well.
+
+  A conversation  has many messages as well, as once the sender_id and recipient_id have been assigned and a conversation has been created, the various messages exchanged between the two users comprise the conversation. If the conversation is deleted then all relevant messages belonging to that conversation will be deleted as well.
+
+  ```r
+  belongs_to :sender, foreign_key: :sender_id, class_name: "User", dependent: :destroy
+  belongs_to :recipient, foreign_key: :recipient_id, class_name: "User", dependent: :destroy
+
+  has_many :messages, dependent: :destroy
+
+  scope :between, -> (sender_id, recipient_id) do
+    where("(conversations.sender_id = ? AND conversations.recipient_id = ?) OR 
+    (conversations.sender_id = ? AND conversations.recipient_id = ?)", sender_id, recipient_id, recipient_id, sender_id)
+  end
+  ```
+
+- **Message:**
+
+The message model reflects the conversation model, as messages between to users belong to the conversation created between them two. A message is unique to a particular conversation.
+
+A message also belongs to a user through either a sender_id or recipient_id.
+
+  ```r
+  belongs_to :conversation
+  
+  belongs_to :user
+  ```
 
 ### **Database Relations:**
-
-ENQUIRE
-
-### **Database schema design**
-
-ENQUIRE
-
-## **Slide Deck**
-
-- An outline of the problem you were trying to solve by building this particular marketplace app, adn why it's a problem that needs solving.
-- A walk through of your app.
-
 
 ## **References:**
 
