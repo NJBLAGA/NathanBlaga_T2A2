@@ -174,10 +174,13 @@ Enjoy!
 - GitHub
 - Trello
 
-
 ### **Background/Problem:**
 
 The global pandemic of Covid-19 spread around the world in 2020 and continues to do so to this day. The virus has had dramatic and destructive influence over the world economy, resulting in various industries undergoing drastic change. One such industry was that of home fitness equipment. With multiple lockdowns occurring worldwide, commercial gyms were shutdown resulting in millions of people working out daily in their homes, backyards and various small local parks.  "ANZ Research economist Adelaide Timbrell told The New Daily sales of home gym equipment spiked after commercial gyms were closed by government" (Plastow 2020). "The initial surge petered out before the end of March, but Ms Timbrell said the decline in sales was caused more by a lack of supply than a lack of demand..Home exercise equipment is a niche market – most people generally join gyms instead, so supply chain issues were exacerbated by COVID-19 a lot more than other more mainstream products,” she said" (Reid 2020). Many experts believe that with a possible end to covid in the next few years, the industry still might see an influx of demand for home gym equipment over returning to commercial gy(Lufkin 2020).
+
+### **Importance:**
+
+Studies have shown that exercise is a vital key in combating stress, dealing with depression and anxiety disorders. Due to the nature of the lockdowns, a number of people who suffered from anxiety and depression from being alone had a difficult time dealing with the present situation. Australians did not have access to a personal home gym or fitness equipment. This meant for months, some Australians went without any form of exercise resulting in no real form of releasing tension and decreasing growing levels of stress and anxiety. Beyond the Covid-19 era, people steaming from low level households could not support a gym membership or invest into a state of the art home gym. This is why it is important that online marketplaces such as Workout Jungle exists and continue to help paring buyers and sellers of new and used fitness equipment, through the Covid-19 pandemic and beyond 2021 as well.
 
 ### **Purpose:**
 
@@ -230,7 +233,7 @@ The sites primary goal is to provide a marketplace for buyers and sellers throug
 
 - As and admin I want the ability to assign the role of admin to users who wish to help grow the community and sites scalability.
 
-**Solution:** Create a admin dashboard in which admin can view all current users. This page will only be accessible to admin, and will provide a feature in which they make assign the role of admin to said user.
+**Solution:** Create a admin dashboard in which admin can view all current users.S This page will only be accessible to admin, and will provide a feature in which they make assign the role of admin to said user.
 
 - As a user I want a user-friendly interface that can function on desktop, tablet and mobile devices with a simplistic desgin and responsive navigational layout.
 
@@ -238,27 +241,94 @@ The sites primary goal is to provide a marketplace for buyers and sellers throug
 
 ### **Trello**
 
+The tasks and features comprised of Workout Jungle's development were allocated and tracked through the below trello board. Following an agile methodology each feature of the application was developed over multiple sprints. Each sprint/feature was allocated a time frame for development, testing, integration and deployment.
+
 **Workout Jungle Trello board: https://trello.com/b/KgPASnGD/workout-jungle**
 
 ![Workout Jungle Trello](./docs/img/trello_workout_jungle.png)
 
-### **Sitemap:**
+The Tasks Completed column houses tasks that focus on research and planning. A majority of these tasks were completed before any code was written. Below a brief description of the key tasks:
+
+- **Research fitness equipment sites:** It was important to understand the landscape of the market a where it was positioned in regards to pre and post Covid-19. Research into other applications was needed to better understand what consumers expect and need for such application.
+- **Desgin sitemap:** The sitemap was designed with the user stories in mind, a simplistic and user-friendly site with a strong navigational layout.
+- **Desgin wireframes:** The wireframes were designed with the user stories in mind as well. It was always the intention on using Bootstrap as the styling framework for this project. Other frameworks such as Bulma and tailwind were considered and even tested, however did not make it to the final product.
+- **Design ERD:** The ERD was needed to have a better understanding of how the database and its relations would interact within the application and so more time was allocated to this task.
+
+The remaining features columns were used to house the development, testing, integration and deployment of the key features of Workout Jungle, Below a brief description of the key features:
+
+- **User Model:** Setting up user authentication and profile management through devise was key in establishing the framework for the following models. Significant time was allocated to this feature.
+- **Admin Model:** Created through devise, this model acts as an extension of the user model and is the foundation for the entire admin role for the app. Significant time was also allocated to this feature.
+- **Listings Model:** The listing model is seen as the key feature of the entire app and so it was spilt into several sprints for wide variety of functionality throughout the site. Sprints were created for;
+  - All listings page
+  - Your listings page (changed to My listings page)
+  - Post new listing page
+  - Show listing page
+- **Active Storage & Cloudinary:** The main focus of this sprint was to have images attached to listings being stored on a cloud sever(Cloudinary) rather than being stored locally. It was vital to the development of Workout Jungle to provide efficient and effective storage capabilities. Significant time was also allocated to this feature.
+- **Shopping Cart:** It was important to meet user stories and so a shopping cart was developed for the application, allowing users to save their favourite listings until a settlement could be arranged with the seller. It should be noted, that through development, due to no really payment option being available, the name of the feature was changed on the front end of the code to "Wish List". A major portion of time (2.5 days) was also allocated to this feature.
+- **Message System:** Due to the nature of the application(heavily borrowed from gumtree), it was important to develop a messaging system in which buyers and sellers could exchange information, settlement on price, negotiating arrangements, delivery and payment options etc. A major portion of time (3 days) was also allocated to this feature.
+- **Admin Dashboard:** Building upon the admin model, Workout Jungle needed an admin only accessible page in which users could be deleted or assigned the role of admin. Considerable time was given to making sure this page was functioning correctly and was completely unreachable by average users.
+- **Nav-bar/styling:** The nav-bar and overall styling was implemented towards the end of the applications development cycle, the sprint was focused on building a nav-bar through bootstrap that satisfied the user stories. While the layout and desgin of the site was focused on having a simplistic and yet functionally layout on mobile, desktop and tablet devices.
+
+### **Sitemap**
 
 ![Workout Jungle Sitemap](./docs/img/sitemap.png)
+
+The initial sitemap developed and desgined for Workout Jungle held its basic structure all throughout development. As shown above when a customer lands on the home page (Jungle), they must log in or sing up to have access to the site. Throughout development, the chock point for the user needing to be signed in varied. However after extensive testing, it was decided to place the sign in feature on the home page and lock the rest of the site out to any non signed in users. This was due to fulfilling the requirements of the users stories and more importantly to support the structure of the application. Overall it provided a more user-friendly and smooth experience while upholding users privacy and safety. An additionally layer was added where if a user is signed in and has the role of an admin, then when would have access to an optional link; the admin dashboard. This insured that an average user could not access this admin dashboard and abuse the features of deleting or assigning admin roles.
+
 ### **Wireframes:**
 
+The initial wireframes designed and developed for Workout Jungle maintained their basic structure and layout throughout the development and production cycles. However a few key elements were either removed, modified or completely revamped for the final product. Below is a breakdown of all wireframes and any changes that occurred. It should be noted that from these initial designs to the final product, Workout Jungle maintained a Mobile first design and will look to the future to continuously improve its design.
+
+**Home Page:** The home page had little to no changes throughout development, all three designs maintained their structure and layout features leading to the final product.
+
 ![Workout Jungle Wireframes - Home Page](./docs/img/wf_home_page.png)
+
+**Nav-bar:** The nav-bar had several changes, although the wireframes showed a burger element in all three views, throughout the styling sprint, several changes were made to a more 'traditional' style. However it was finally settle upon to have a mobile styled navbar for all three views. The links changed as well, as Your Listings became My Listings, Cart became Wish List, Messages became Inbox and Admin changed to Admin Dashboard.
+
 ![Workout Jungle Wireframes - Nav Bar](./docs/img/wf_nav_bar.png)
+
+**Sign Up Page:** There was little no change to the sign up form page throughout development. It maintained a basic and simple sign up style and structure.
+
 ![Workout Jungle Wireframes - Sign Up Page](./docs/img/wf_sign_up_page.png)
+
+**Sign In Page:** Likewise the Sign In Page did not change at all and kept its structure.
+
 ![Workout Jungle Wireframes - Sign In Page](./docs/img/wf_sign_in_page.png)
+
+**Edit Profile Page:** The Edit Profile/Change Password saw some changes throughout its sprint, mostly wording and desgin elements but nothing to drastic. It is a key page that will be revisited in the future for minor changes. Plans are to allow the user more customisation of their profile, an avatar, bio and a toggle message on/off feature.
+
 ![Workout Jungle Wireframes - Edit Profile Page](./docs/img/wf_edit_profile_page.png)
+
+**Post New Listings:** Other than a name change, this page only saw a desgin change slightly and nothing to drastic.
+
 ![Workout Jungle Wireframes - New Listings Page](./docs/img/wf_new_listings_page.png)
+
+**All Listings Page:** This page saw major changes throughout its sprint, first of all, it has two views, one for a user and one for an admin. As a user on this page, they can only see and click on the show button while an admin has the power and can access the delete button function on this page. The basic structure of the cards that house the listings saw changes throughout the styling sprint and were close to the initial desgin with only small changes to their functionality.
+
 ![Workout Jungle Wireframes - All Listings Page](./docs/img/wf_all_listings_page.png)
+
+**My Listings Page:** My Listings Page saw minor changes to its structure and overall desgin. There was a stage during the sprint that the filter bar was removed from the page, yet brought back to allow the user to have more sorting functionality on the page.
+
 ![Workout Jungle Wireframes - Your Listings Page](./docs/img/wf_your_listings_page.png)
+
+**Show Listings Page:** As shown on the wireframes, the user would have multiple images attached and displayed on this page, however this was later changed to one image instead. Future plans include allowing users to upload and view multiple images for each listing.
+
 ![Workout Jungle Wireframes - Show Listing Page](./docs/img/wf_show_listing_page.png)
+
+**Wish List Page:** Originally Shopping cart or Cart, the change to Wish List better suited the style and flow of the site as a whole. A user can add their favourite listings to a list in which they could access very easily until a settlement can be reached with the seller. The desgin went through several changes until it reached the final products desgin(which aligns closely to that of the wireframes).
+
 ![Workout Jungle Wireframes - Cart Page](./docs/img/wf_cart_page.png)
+
+**Inbox Page:** Inbox design went through several iterations before settling on the final desgin, it fits closely to the original desgin and act as an user-friendly interface for users to engage in conversations with other users.
+
 ![Workout Jungle Wireframes - Conversations Page](./docs/img/wf_conversations_page.png)
+
+**Message Page:** The message page saw some changes but was reverted back to the original desgin due to time constraints. Future updates will be implemented to refine its interface including the use of a notification system as well.
+
 ![Workout Jungle Wireframes - Message Page](./docs/img/wf_message_page.png)
+
+**Admin Dashboard Page:** The Admin Dashboard saw changes in its button layout throughout the different devices, however kept true to its original desgin and layout. Future updates of this page will include a private messaging system between admins, the introduction of a moderator role and more security checks.
+
 ![Workout Jungle Wireframes - Admin Page](./docs/img/wf_admin_page.png)
 
 ### **Functionality/features:**
@@ -308,7 +378,7 @@ The sites primary goal is to provide a marketplace for buyers and sellers throug
 
 ### **ERD:**
 
-![Workout Jungle ERD](./docs/img/ERD.png)
+![Workout Jungle ERD](./docs/img/workout_jungle_erd.png)
 
 ### **High-level components:**
 
