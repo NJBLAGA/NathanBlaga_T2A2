@@ -2,9 +2,11 @@
 
 ## **Marketplace Project - Workout Jungle**
 
-### **Website URL: https://workout-jungle.herokuapp.com**
+### **Workout Jungle URL: https://workout-jungle.herokuapp.com**
 
-### **GitHub Repository: https://github.com/NJBLAGA/workout_jungle**
+### ** Workout Jungle GitHub Repository: https://github.com/NJBLAGA/workout_jungle**
+
+### **T2A2 Readme GitHub Repository: https://github.com/NJBLAGA/NathanBlaga_T2A2**
 
 ### **Installation:**
 
@@ -249,85 +251,147 @@ The tasks and features comprised of Workout Jungle's development were allocated 
 
 The Tasks Completed column houses tasks that focus on research and planning. A majority of these tasks were completed before any code was written. Below a brief description of the key tasks:
 
-- **Research fitness equipment sites:** It was important to understand the landscape of the market a where it was positioned in regards to pre and post Covid-19. Research into other applications was needed to better understand what consumers expect and need for such application.
-- **Desgin sitemap:** The sitemap was designed with the user stories in mind, a simplistic and user-friendly site with a strong navigational layout.
-- **Desgin wireframes:** The wireframes were designed with the user stories in mind as well. It was always the intention on using Bootstrap as the styling framework for this project. Other frameworks such as Bulma and tailwind were considered and even tested, however did not make it to the final product.
-- **Design ERD:** The ERD was needed to have a better understanding of how the database and its relations would interact within the application and so more time was allocated to this task.
+**Research fitness equipment sites:**
+
+It was important to understand the landscape of the market a where it was positioned in regards to pre and post Covid-19. Research into other applications was needed to better understand what consumers expect and need for such application.
+
+**Desgin sitemap:**
+
+The sitemap was designed with the user stories in mind, a simplistic and user-friendly site with a strong navigational layout.
+
+**Desgin wireframes:**
+
+The wireframes were designed with the user stories in mind as well. It was always the intention on using Bootstrap as the styling framework for this project. Other frameworks such as Bulma and tailwind were considered and even tested, however did not make it to the final product.
+
+**Design ERD:**
+
+The ERD was needed to have a better understanding of how the database and its relations would interact within the application and so more time was allocated to this task.
 
 The remaining features columns were used to house the development, testing, integration and deployment of the key features of Workout Jungle, Below a brief description of the key features:
 
-- **User Model:** Setting up user authentication and profile management through devise was key in establishing the framework for the following models. Significant time was allocated to this feature.
-- **Admin Model:** Created through devise, this model acts as an extension of the user model and is the foundation for the entire admin role for the app. Significant time was also allocated to this feature.
-- **Listings Model:** The listing model is seen as the key feature of the entire app and so it was spilt into several sprints for wide variety of functionality throughout the site. Sprints were created for;
-  - All listings page
-  - Your listings page (changed to My listings page)
-  - Post new listing page
-  - Show listing page
-- **Active Storage & Cloudinary:** The main focus of this sprint was to have images attached to listings being stored on a cloud sever(Cloudinary) rather than being stored locally. It was vital to the development of Workout Jungle to provide efficient and effective storage capabilities. Significant time was also allocated to this feature.
-- **Shopping Cart:** It was important to meet user stories and so a shopping cart was developed for the application, allowing users to save their favourite listings until a settlement could be arranged with the seller. It should be noted, that through development, due to no really payment option being available, the name of the feature was changed on the front end of the code to "Wish List". A major portion of time (2.5 days) was also allocated to this feature.
-- **Message System:** Due to the nature of the application(heavily borrowed from gumtree), it was important to develop a messaging system in which buyers and sellers could exchange information, settlement on price, negotiating arrangements, delivery and payment options etc. A major portion of time (3 days) was also allocated to this feature.
-- **Admin Dashboard:** Building upon the admin model, Workout Jungle needed an admin only accessible page in which users could be deleted or assigned the role of admin. Considerable time was given to making sure this page was functioning correctly and was completely unreachable by average users.
-- **Nav-bar/styling:** The nav-bar and overall styling was implemented towards the end of the applications development cycle, the sprint was focused on building a nav-bar through bootstrap that satisfied the user stories. While the layout and desgin of the site was focused on having a simplistic and yet functionally layout on mobile, desktop and tablet devices.
+**User Model:**
+
+Setting up user authentication and profile management through devise was key in establishing the framework for the following models. Significant time was allocated to this feature.
+
+**Admin Model:**
+
+Created through devise, this model acts as an extension of the user model and is the foundation for the entire admin role for the app. Significant time was also allocated to this feature.
+
+
+**Listings Model:**
+
+The listing model is seen as the key feature of the entire app and so it was spilt into several sprints for wide variety of functionality throughout the site. Sprints were created for;
+
+- All listings page
+- Your listings page (changed to My listings page)
+- Post new listing page
+- Show listing page
+
+**Active Storage & Cloudinary:**
+
+The main focus of this sprint was to have images attached to listings being stored on a cloud sever(Cloudinary) rather than being stored locally. It was vital to the development of Workout Jungle to provide efficient and effective storage capabilities. Significant time was also allocated to this feature.
+
+**Shopping Cart:**
+
+It was important to meet user stories and so a shopping cart was developed for the application, allowing users to save their favourite listings until a settlement could be arranged with the seller. It should be noted, that through development, due to no really payment option being available, the name of the feature was changed on the front end of the code to "Wish List". A major portion of time (2.5 days) was also allocated to this feature.
+
+**Message System:**
+
+Due to the nature of the application(heavily borrowed from gumtree), it was important to develop a messaging system in which buyers and sellers could exchange information, settlement on price, negotiating arrangements, delivery and payment options etc. A major portion of time (3 days) was also allocated to this feature.
+
+**Admin Dashboard:**
+
+Building upon the admin model, Workout Jungle needed an admin only accessible page in which users could be deleted or assigned the role of admin. Considerable time was given to making sure this page was functioning correctly and was completely unreachable by average users.
+
+**Nav-bar/styling:**
+
+The nav-bar and overall styling was implemented towards the end of the applications development cycle, the sprint was focused on building a nav-bar through bootstrap that satisfied the user stories. While the layout and desgin of the site was focused on having a simplistic and yet functionally layout on mobile, desktop and tablet devices.
 
 ### **Sitemap**
 
-![Workout Jungle Sitemap](./docs/img/sitemap.png)
+![Workout Jungle Sitemap](./docs/img/workout_jungle_sitemap.png)
 
-The initial sitemap developed and desgined for Workout Jungle held its basic structure all throughout development. As shown above when a customer lands on the home page (Jungle), they must log in or sing up to have access to the site. Throughout development, the chock point for the user needing to be signed in varied. However after extensive testing, it was decided to place the sign in feature on the home page and lock the rest of the site out to any non signed in users. This was due to fulfilling the requirements of the users stories and more importantly to support the structure of the application. Overall it provided a more user-friendly and smooth experience while upholding users privacy and safety. An additionally layer was added where if a user is signed in and has the role of an admin, then when would have access to an optional link; the admin dashboard. This insured that an average user could not access this admin dashboard and abuse the features of deleting or assigning admin roles.
+The initial sitemap developed and desgined for Workout Jungle held its basic structure all throughout development. As shown above when a customer lands on the home page (Jungle), they must log in or sing up to have access to the site. Throughout development, the chock point for the user needing to be signed in varied. However after extensive testing, it was decided to place the sign in feature on the home page and lock the rest of the site out to any non signed in users. This was due to fulfilling the requirements of the users stories and more importantly to support the structure of the application. Overall it provided a more user-friendly and smooth experience while upholding users privacy and safety. An additionally layer was added where if a user is signed in and has the role of an admin, then when would have access to an optional link; the admin dashboard. This insured that an average user could not access this admin dashboard and abuse the features of deleting or assigning admin roles. The final version of Workout Jungle was suffering from navbar bugs in which the profile link was not allowing users/admins to access the three options. This resulted in a new navbar layout in which the Admin Dashboard, Edit Profile and Log Out links where placed on the same layer as the other links.
 
 ### **Wireframes:**
 
 The initial wireframes designed and developed for Workout Jungle maintained their basic structure and layout throughout the development and production cycles. However a few key elements were either removed, modified or completely revamped for the final product. Below is a breakdown of all wireframes and any changes that occurred. It should be noted that from these initial designs to the final product, Workout Jungle maintained a Mobile first design and will look to the future to continuously improve its design.
 
-**Home Page:** The home page had little to no changes throughout development, all three designs maintained their structure and layout features leading to the final product.
+**Home Page:**
+
+The home page had little to no changes throughout development, all three designs maintained their structure and layout features leading to the final product.
 
 ![Workout Jungle Wireframes - Home Page](./docs/img/wf_home_page.png)
 
-**Nav-bar:** The nav-bar had several changes, although the wireframes showed a burger element in all three views, throughout the styling sprint, several changes were made to a more 'traditional' style. However it was finally settle upon to have a mobile styled navbar for all three views. The links changed as well, as Your Listings became My Listings, Cart became Wish List, Messages became Inbox and Admin changed to Admin Dashboard.
+**Nav-bar:**
+
+The nav-bar had several changes, although the wireframes showed a burger element in all three views, throughout the styling sprint, several changes were made to a more 'traditional' style. However it was finally settle upon to have a mobile styled navbar for all three views. The links changed as well, as Your Listings became My Listings, Cart became Wish List, Messages became Inbox and Admin changed to Admin Dashboard.
 
 ![Workout Jungle Wireframes - Nav Bar](./docs/img/wf_nav_bar.png)
 
-**Sign Up Page:** There was little no change to the sign up form page throughout development. It maintained a basic and simple sign up style and structure.
+**Sign Up Page:**
+
+There was little no change to the sign up form page throughout development. It maintained a basic and simple sign up style and structure.
 
 ![Workout Jungle Wireframes - Sign Up Page](./docs/img/wf_sign_up_page.png)
 
-**Sign In Page:** Likewise the Sign In Page did not change at all and kept its structure.
+**Sign In Page:**
+
+Likewise the Sign In Page did not change at all and kept its structure.
 
 ![Workout Jungle Wireframes - Sign In Page](./docs/img/wf_sign_in_page.png)
 
-**Edit Profile Page:** The Edit Profile/Change Password saw some changes throughout its sprint, mostly wording and desgin elements but nothing to drastic. It is a key page that will be revisited in the future for minor changes. Plans are to allow the user more customisation of their profile, an avatar, bio and a toggle message on/off feature.
+**Edit Profile Page:**
+
+The Edit Profile/Change Password saw some changes throughout its sprint, mostly wording and desgin elements but nothing to drastic. It is a key page that will be revisited in the future for minor changes. Plans are to allow the user more customisation of their profile, an avatar, bio and a toggle message on/off feature.
 
 ![Workout Jungle Wireframes - Edit Profile Page](./docs/img/wf_edit_profile_page.png)
 
-**Post New Listings:** Other than a name change, this page only saw a desgin change slightly and nothing to drastic.
+**Post New Listings:**
+
+Other than a name change, this page only saw a desgin change slightly and nothing to drastic.
 
 ![Workout Jungle Wireframes - New Listings Page](./docs/img/wf_new_listings_page.png)
 
-**All Listings Page:** This page saw major changes throughout its sprint, first of all, it has two views, one for a user and one for an admin. As a user on this page, they can only see and click on the show button while an admin has the power and can access the delete button function on this page. The basic structure of the cards that house the listings saw changes throughout the styling sprint and were close to the initial desgin with only small changes to their functionality.
+**All Listings Page:**
+
+This page saw major changes throughout its sprint, first of all, it has two views, one for a user and one for an admin. As a user on this page, they can only see and click on the show button while an admin has the power and can access the delete button function on this page. The basic structure of the cards that house the listings saw changes throughout the styling sprint and were close to the initial desgin with only small changes to their functionality.
 
 ![Workout Jungle Wireframes - All Listings Page](./docs/img/wf_all_listings_page.png)
 
-**My Listings Page:** My Listings Page saw minor changes to its structure and overall desgin. There was a stage during the sprint that the filter bar was removed from the page, yet brought back to allow the user to have more sorting functionality on the page.
+**My Listings Page:**
+
+My Listings Page saw minor changes to its structure and overall desgin. There was a stage during the sprint that the filter bar was removed from the page, yet brought back to allow the user to have more sorting functionality on the page.
 
 ![Workout Jungle Wireframes - Your Listings Page](./docs/img/wf_your_listings_page.png)
 
-**Show Listings Page:** As shown on the wireframes, the user would have multiple images attached and displayed on this page, however this was later changed to one image instead. Future plans include allowing users to upload and view multiple images for each listing.
+**Show Listings Page:**
+
+As shown on the wireframes, the user would have multiple images attached and displayed on this page, however this was later changed to one image instead. Future plans include allowing users to upload and view multiple images for each listing.
 
 ![Workout Jungle Wireframes - Show Listing Page](./docs/img/wf_show_listing_page.png)
 
-**Wish List Page:** Originally Shopping cart or Cart, the change to Wish List better suited the style and flow of the site as a whole. A user can add their favourite listings to a list in which they could access very easily until a settlement can be reached with the seller. The desgin went through several changes until it reached the final products desgin(which aligns closely to that of the wireframes).
+**Wish List Page:**
+
+Originally Shopping cart or Cart, the change to Wish List better suited the style and flow of the site as a whole. A user can add their favourite listings to a list in which they could access very easily until a settlement can be reached with the seller. The desgin went through several changes until it reached the final products desgin(which aligns closely to that of the wireframes).
 
 ![Workout Jungle Wireframes - Cart Page](./docs/img/wf_cart_page.png)
 
-**Inbox Page:** Inbox design went through several iterations before settling on the final desgin, it fits closely to the original desgin and act as an user-friendly interface for users to engage in conversations with other users.
+**Inbox Page:**
+
+Inbox design went through several iterations before settling on the final desgin, it fits closely to the original desgin and act as an user-friendly interface for users to engage in conversations with other users.
 
 ![Workout Jungle Wireframes - Conversations Page](./docs/img/wf_conversations_page.png)
 
-**Message Page:** The message page saw some changes but was reverted back to the original desgin due to time constraints. Future updates will be implemented to refine its interface including the use of a notification system as well.
+**Message Page:**
+
+The message page saw some changes but was reverted back to the original desgin due to time constraints. Future updates will be implemented to refine its interface including the use of a notification system as well.
 
 ![Workout Jungle Wireframes - Message Page](./docs/img/wf_message_page.png)
 
-**Admin Dashboard Page:** The Admin Dashboard saw changes in its button layout throughout the different devices, however kept true to its original desgin and layout. Future updates of this page will include a private messaging system between admins, the introduction of a moderator role and more security checks.
+**Admin Dashboard Page:**
+
+The Admin Dashboard saw changes in its button layout throughout the different devices, however kept true to its original desgin and layout. Future updates of this page will include a private messaging system between admins, the introduction of a moderator role and more security checks.
 
 ![Workout Jungle Wireframes - Admin Page](./docs/img/wf_admin_page.png)
 
@@ -340,6 +404,7 @@ Workout Jungle's features and functionality steam from the need to meet user req
 The home page provides any user to the site with the terms and conditions in which they must abide to. It also blocks and non signed in users access to the rest of the site and requires all users to be signed in with an account to proceed.
 
 ![Workout Jungle Screenshot](./docs/img/sc_home_page.png)
+![Workout Jungle Screenshot](./docs/img/sc_home_page_2.png)
 
 #### **Listings System:**
 
@@ -425,7 +490,7 @@ The Wish List feature allows users to "bank" or 'store their favourite listings 
 
 - Important facts about the listing
 - A link to view the listing
-- Item quanitity for each line item
+- Item quanitity for each line item,
 - Total price of all items within the user's Wish List
 - The ability to remove items or remove duplicates
 - Delete the Wish List
@@ -436,9 +501,25 @@ The Wish List feature allows users to "bank" or 'store their favourite listings 
 
 ### **High-level components:**
 
-![Workout Jungle Screenshot](./docs/img/workout_jungle_mvc_model.png)
+![Workout Jungle Screenshot](./docs/img/workout_jungle_mvc_fw.png)
+
+Workout Jungle is built upon a Ruby on Rails (Model-View-Controller)MVC Framework and consists of various front end, back end and cloud base software(See tech stack for full list). The above diagram breaks down Workout Jungle architectural framework and denotes how each component is handled. Observing the above framework and by MVC convention the various components are assigned to different roles within the applications structure. At the frameworks core, Ruby on Rails has been utilised to handle Workout Jungles routing, controller, model and view functionality. Through the help of ruby gems such as simple_form, users were given a simple and clean interface to sign up, sign in, create alongside edit listings and send messages. Through devise, ruby and PostgreSQL set authentication procedures for all users. Additionally restrictive measures and accessibility were set in place on pages that contained particular user information. Cloudinary was utilised to store all uploaded images attached to listing resulting in less storage space being consumed on the applications side. Through the CSS framework Bootstrap Workout Jungle delivers a user-friendly and smooth experience of its layout and desgin.
+
+When a user  arrives on Workout Jungle, they sign in and wish to browse the All Listings Page. By clicking on the navbar link the user through their browser, sends a http request to the server. Heroku than informs the controller a user wishes to access the All Listings Page. The controller interacts and instructs the model to query the database through active records to retrieve all user listings and attached images from the database. The model through PostgreSQL then queries Cloudinary(Workout Jungles image cloud based service) and retrieves images that are associated with all listings posted on the site based on listing_id and blob_id. Once PostgreSQL has compiled all relevant data, it relays it back to the model which in turn informs the controller. The controller than executes the appropriate views and displays the listings and attached images alongside HTML, partials, CSS and Javascript back to the browser and user.
+
+Although the above example was a basic explanation of how Workout Jungles framework operates it depicts how the various components of the framework interact with each other.
 
 ### **Third Party Services:**
+
+Workout Jungle utilises third party services such as Heroku and Cloudinary to further enhance its performance in efficiency and scalability.
+
+#### **Heroku:**
+
+Deploying Workout Jungle on Heroku allowed for faster and more effective building of the applications core functionality. This meant focus could be placed on the source code of the application rather than then infrastructure itself. Heroku allowed for Workout Jungle to be developed, tested and updated with minimal to no downtime. The service removed friction between balancing the needs of development cycles and server maintenance and supervision. Thanks to its user-friendly and powerful dashboard in conjunction with command line support, Workout Jungle was able to be deployed from an early stage. This allowed for continuous deployment and frequent updates to be made from GitHub without impeding on the development cycle and sprints of particular features. Heroku provided various supportive tools, features and rich documents that helped soften the learning curve and help to provide a quick, efficient and effective deployment.
+
+#### **Cloudinary:**
+
+Integrating Cloudinary into Workout Jungle development allowed for a more easy, efficient and effective manner in which to approach and handle asset management in the application. Cloudinary provides an easy solution to store attached images uploaded by users to Workout Jungle without impeding on server or database memory and storage capacities. Additionally Cloudinary provided the ability to not only store images but offered features to manipulate, format and optimise images for more efficient behaviour. Cloudinary also provides fast and optimised CDN delivery, detailed and informative documentations alongside strong support integration for Workout Jungles development sprints.
 
 ### **ERD:**
 
@@ -446,13 +527,32 @@ The Wish List feature allows users to "bank" or 'store their favourite listings 
 
 The above ERD represents Workout Jungle's initial database design and structure. It consists of the following entities:
 
-- **Users:** Contains information related to the user; username, email, password, an admin foreign key and has a primary key of the user_id. Users can have zero to many conversations, while a conversation can only belong to one user with another user. A user can also have zero to many listings and zero to many carts. However a listing and a cart can only belong to one user. Finally a user does not have to be an admin, but an admin needs to belong to one user.
-- **Admins:** Contains a primary key of admin_id and a admin only password. Admins need to belong to one user, yet a user does not need to be an admin(optional).
-- **Listings:** Contains a primary key of listings_id, and houses information about each listing; title, description, condition, price, listing_type alongside foreign keys for the images and users tables. Listings can belong to zero to many carts, while a cart has one to many listings. A listing must have one image, and an image must belong to one listing. A listing belongs to one user, but a user has many listings.
-- **Images:** The images table hold a primary key of image_id and the following; name of image, file type, file size and storage(local or cloud based). An image belongs to one listing and a listing has one image.
-- **Carts:** The Carts table has a primary key of cart_id, contains the quantity of the item within the cart itself and two foreign keys belonging to users and listings. A cart belongs to one user while a user can have zero to many carts.
-- **Conversations:** The Conversations table has a primary key of conversations_id with two main columns of sender_id and recipient_id a foreign key to the user table. A conversation belongs to one user with another user, while a user can have zero to many conversations. A conversation has zero to many messages, while a message belongs to one conversation.
-- **Messages:** Contains a primary key of message_id, every message has a body of text, and a foreign key to the conversations table. A message belongs to one conversation while a conversation has many messages.
+**Users:**
+Contains information related to the user; username, email, password, an admin foreign key and has a primary key of the user_id. Users can have zero to many conversations, while a conversation can only belong to one user with another user. A user can also have zero to many listings and zero to many carts. However a listing and a cart can only belong to one user. Finally a user does not have to be an admin, but an admin needs to belong to one user.
+
+**Admins:**
+
+Contains a primary key of admin_id and a admin only password. Admins need to belong to one user, yet a user does not need to be an admin(optional).
+
+**Listings:**
+
+Contains a primary key of listings_id, and houses information about each listing; title, description, condition, price, listing_type alongside foreign keys for the images and users tables. Listings can belong to zero to many carts, while a cart has one to many listings. A listing must have one image, and an image must belong to one listing. A listing belongs to one user, but a user has many listings.
+
+**Images:**
+
+The images table hold a primary key of image_id and the following; name of image, file type, file size and storage(local or cloud based). An image belongs to one listing and a listing has one image.
+
+**Carts:**
+
+The Carts table has a primary key of cart_id, contains the quantity of the item within the cart itself and two foreign keys belonging to users and listings. A cart belongs to one user while a user can have zero to many carts.
+
+**Conversations:**
+
+The Conversations table has a primary key of conversations_id with two main columns of sender_id and recipient_id a foreign key to the user table. A conversation belongs to one user with another user, while a user can have zero to many conversations. A conversation has zero to many messages, while a message belongs to one conversation.
+
+**Messages:**
+
+Contains a primary key of message_id, every message has a body of text, and a foreign key to the conversations table. A message belongs to one conversation while a conversation has many messages.
 
 ### **Database Schema Design:**
 
@@ -469,9 +569,9 @@ ActiveRecord::Schema.define(version: 2021_03_12_023809) do
     t.string "name", null: false
     # Type of file uploaded
     t.string "record_type", null: false
-    # Id given to each attachment
+    # id given to each attachment
     t.bigint "record_id", null: false
-    # Id given to blob/image itself
+    # id given to blob/image
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     # t.index is adding a database index to the referenced column, allows the model to query more efficiently based on said index
@@ -494,17 +594,17 @@ ActiveRecord::Schema.define(version: 2021_03_12_023809) do
     t.bigint "byte_size", null: false
     t.string "checksum", null: false
     t.datetime "created_at", null: false
-    # t.index true means it is adding a database index to the referenced column, the role of indexes aids in speeding up queries. 
+    # t.index means it is adding a database index to the referenced column, the role of indexes aids in speeding up queries. 
     # Without an index, the database would need to check every record in the projects table, one by one, until a match is found.
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
- 
-  create_table "admins", force: :cascade do |t|
+
+   create_table "admins", force: :cascade do |t|
     # Created when devise command was run to create the admin model
-    # Should be noted that admin model does not require admin only passwords, emails or usernames, it relies on the username table
-    # Admins email set to default until admin enters it(not needed in Workout Jungle structure)
+    # Should be noted that admin model does not require admin only passwords, emails or usernames (It relies on the username table)
+    # Admin's email set to default until admin enters it(not needed in Workout Jungle structure)
     t.string "email", default: "", null: false
-    # Admins password set to default until admin enters it(not needed in Workout Jungle structure)
+    # Admin's password set to default until admin enters it(not needed in Workout Jungle structure)
     t.string "encrypted_password", default: "", null: false
     # Database calls this token when user wishes to store a new password in place of their old one
     t.string "reset_password_token"
@@ -520,7 +620,7 @@ ActiveRecord::Schema.define(version: 2021_03_12_023809) do
 
   create_table "carts", force: :cascade do |t|
     # Created with a cart migration
-    # Carts table acts as a storage to hold a users wish list, they hold line_items which house the listings(items) themselves
+    # Carts table acts as a storage to hold a user's wish list, they hold line_items which house the listings(items)
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -529,7 +629,7 @@ ActiveRecord::Schema.define(version: 2021_03_12_023809) do
     # Created when conversation model was scaffolded
     # Each user is assigned a sender_id and recipient_id for every conversation they have with another user
     # Example: if Tom messages Kate, Tom is assigned a sender_id, while Kate is assigned a recipient_id, however the roles would be reversed if Kate messaged Tom
-    # The model than queries based on the two indexes when creating the conversation between the two users
+    # The model then queries based on the two indexes when creating the conversation between the two users
     t.integer "sender_id"
     t.integer "recipient_id"
     t.datetime "created_at", precision: 6, null: false
@@ -540,11 +640,11 @@ ActiveRecord::Schema.define(version: 2021_03_12_023809) do
     # Created with line_item migration
     # Foreign key for listing_id
     t.bigint "listing_id", null: false
-    # Foreign key for cart_it
+    # Foreign key for cart_id
     t.bigint "cart_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    # A value that represents the amount an item is represented in the line_item(a counter), for example: 20kg Plate x 2 (meaning there are two plates within that line item)
+    # A value that represents the amount of an item assigned to the line_item, for example: 20kg Plate x 2 (meaning there are two plates within that line item)
     t.integer "quantity", default: 1
     # t.index is adding a database index to the referenced column, allows the model to query more efficiently based on said index
     t.index ["cart_id"], name: "index_line_items_on_cart_id"
@@ -553,7 +653,7 @@ ActiveRecord::Schema.define(version: 2021_03_12_023809) do
   end
 
   create_table "listings", force: :cascade do |t|
-    # Created when listing model was scaffolded
+    # Created when listing model was scaffolded 
     # A listing has a title
     t.string "title"
     # A listing has a description
@@ -588,19 +688,19 @@ ActiveRecord::Schema.define(version: 2021_03_12_023809) do
 
   create_table "users", force: :cascade do |t|
     # Created when devise command was run to create the user model
-    # Each user has an email, default to an empty string till they sign up
+    # Each user has an email, defaulted to an empty string until they sign up
     t.string "email", default: "", null: false
-    # Each user has an password default to an empty string till they sign up
+    # Each user has a password defaulted to an empty string until they sign up
     t.string "encrypted_password", default: "", null: false
     # Database calls this token when user wishes to store a new password in place of their old one
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    # Each user has an username, default to an empty string till they sign up
+    # Each user has a username, defaulted to an empty string until they sign up
     t.string "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    # By default admin for all users is set to false, when set to true through seeding, or admin dashboard, they are considered an admin
+    # By default, admin for all users is set to false, when set to true through seeding, or admin dashboard, they are considered an admin
     t.boolean "admin", default: false
     # t.index is adding a database index to the referenced column, allows the model to query more efficiently based on said index
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -612,32 +712,48 @@ ActiveRecord::Schema.define(version: 2021_03_12_023809) do
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "listings"
 end
+  
 ```
 
-- **Users/Admin:** Utilising the devise gem, the users and admins table reflects their original desgin shown in the above ERD. However after the first sprint, it was decided to change the foreign key of admin_id into a boolean. Used as a "switch", the boolean allows an admin to toggle it on to assign another user as an admin.
-- **Listings:** The listings kept the same structure its ERD counterpart had, only difference is its image_id was removed, and through active storage and and image is attached to each listing through a blob_id. An listing has one image attached, and an image belongs to one listing.
-- **Active_storage_blobs:** Through active storage, this table was created to store all images uploaded by users, and indexes blob_id to the listings they are attached to.
-- **Carts/Line_items:** The Carts table was spilt into two separate tables; carts and line items. The Cart table holds user carts(wish lists) and houses the line items. The Line_items table contain one attribute of quantity which is assigned to the copies of listings placed within one line item. It then has foreign keys to the listings and cart id.
-- **Conversations/Messages:**  The Conversation table retains its sender_id and recipient_id yet removed the foreign key to users table, which was added to the messages table. When the conversations controller is called to create a new conversation, it assign the current user with the sender_id and the other user with a recipient_id. The messages table then holds the actual body of text exchanged each time by the two users, with foreign keys referencing users and conversations table. This allows the message model to effectively and efficiently query the database base don those two indexes.
+**Users/Admin:**
+
+Utilising the devise gem, the users and admins table reflects their original desgin shown in the above ERD. However after the first sprint, it was decided to change the foreign key of admin_id into a boolean. Used as a "switch", the boolean allows an admin to toggle it on to assign another user as an admin.
+
+**Listings:**
+
+The listings kept the same structure its ERD counterpart had, only difference is its image_id was removed, and through active storage and and image is attached to each listing through a blob_id. An listing has one image attached, and an image belongs to one listing.
+
+**Active_storage_blobs:**
+
+Through active storage, this table was created to store all images uploaded by users, and indexes blob_id to the listings they are attached to.
+
+**Carts/Line_items:**
+
+The Carts table was spilt into two separate tables; carts and line items. The Cart table holds user carts(wish lists) and houses the line items. The Line_items table contain one attribute of quantity which is assigned to the copies of listings placed within one line item. It then has foreign keys to the listings and cart id.
+
+**Conversations/Messages:**
+
+ The Conversation table retains its sender_id and recipient_id yet removed the foreign key to users table, which was added to the messages table. When the conversations controller is called to create a new conversation, it assign the current user with the sender_id and the other user with a recipient_id. The messages table then holds the actual body of text exchanged each time by the two users, with foreign keys referencing users and conversations table. This allows the message model to effectively and efficiently query the database base don those two indexes.
 
 ### **Model Relationships**
 
 Below are all model relationships present in Workout Jungle's source code.
 
-- **User:**  
+**User:**  
+
 Similar to th ERD, the user model has a many listings association, as in a user can have zero to many listings on the site. Due to the dependent: destroy, if a user is ,deleted from the database, then all their associated listings will be deleted as well. This prevents any orphan listings being left behind.
 
   ```r
   has_many :listings, dependent: :destroy
   ```
 
-- **Listing:**  
+**Listing:**  
 
   The listing model shows us that a listing belongs to one user, and making it optional means a user may have zero to many listings, the relationship does not require a user to have a minimum of one listing.
 
-  A listing has one attached image which allows a user to attach an image every time they wish to post a new listing. Every time a listing is called due to this association, we can fetch the associated image belonging to that listing as well.
+  A listing has one attached image which allows a user to attach an image every time they wish to post a new listing. Every listing has an image id relating to the active_storage_attachments table. Within this table each attachment contains a blob_id that references the active_storage_blobs table. This table contains all images pertaining to Workout Jungle. Every time a listing is called due to this association, we can fetch the associated image belonging to that listing through these relationships.
 
-  A listing has many line_items refers to the idea that a listing can belong to multiple carts9wish lists). If a user adds a particular listing to their cart, it does not prevent another user from adding it to their cart.
+  A listing has many line_items refers to  a listing can belong to multiple carts(wish lists). If a user adds a particular listing to their cart, it does not prevent another user from adding it to their cart.
 
   ```r
     belongs_to :user, optional: true
@@ -647,7 +763,7 @@ Similar to th ERD, the user model has a many listings association, as in a user 
     has_many :line_items
   ```
 
-- **Cart:**
+**Cart:**
 
   The cart model has many line items, meaning that a user can add several different listings to a cart, and that cart can hold all line_items needed to house the listings. Due to the dependent: destroy function, whenever a cart is destroy by the user the line_items it housed will be destroyed as well, preventing any orphan line_items remaining.
 
@@ -655,7 +771,7 @@ Similar to th ERD, the user model has a many listings association, as in a user 
    has_many :line_items, dependent: :destroy
   ```
 
-- **Line_item:**
+**Line_item:**
 
   The Line_item model defines relationship in which a line_item belongs particular listing and a particular cart. If a line_item is currently housing one item(listing) it cannot house another, instead another line_item is created to house the new listing. Likewise once a line_item is created for a cart, it is unique for that cart_id and cannot be placed within another cart. Once agian a new line_item would need to be created and place within that new cart.
 
@@ -665,7 +781,7 @@ Similar to th ERD, the user model has a many listings association, as in a user 
   belongs_to :cart
   ```
 
-- **Conversation:**
+**Conversation:**
 
   The conversation model defines that a conversation belongs to a sender_id and recipient_id as foreign keys. This can be explained through the scope :between defined in its model as well. When called upon the scope through the controller assigns two ids of sender and recipient. Using the example from above; Kate spots a listing she wishes to find out more about, she notices the listing was posted by Mark. Kate then wishes to send Mark a message. When Kate clicks on the message user button, it will direct to Mark's message page because it assigns Kate with the sender_id and the listings user with the recipient_id. If the roles were reversed, Mark would have a sender_id and Kate would have been assigned with the recipient_id. Once both ids have been assigned the controller calls the create method and creates a conversation based on the two user ids. Hence a conversation belongs to a sender_id and a recipient id. If either user is deleted from the database, then that conversation would be deleted as well.
 
@@ -683,7 +799,7 @@ Similar to th ERD, the user model has a many listings association, as in a user 
   end
   ```
 
-- **Message:**
+**Message:**
 
 The message model reflects the conversation model, as messages between to users belong to the conversation created between them two. A message is unique to a particular conversation.
 
@@ -696,6 +812,54 @@ A message also belongs to a user through either a sender_id or recipient_id.
   ```
 
 ### **Database Relations:**
+
+![Workout Jungle Updated ERD](./docs/img/workout_jungle_final_ERD.png)
+
+The above image depicts and updated ERD of Workout Jungle. See the model relationships section above for the associations between each entity.
+
+**Admin/User Relations Relations:**
+
+The users table has a admin boolean set to default, when set to true, Workout Jungle associates that user account to have the role of admin. The admins table has a foreign key of email which relates a user to the admin table by their email. This relation was established by devise.
+
+**Messages Relations:**
+
+The messages table contains two foreign keys. The conversation_id informs the database that any given message on Workout Jungle belongs to a specific conversation between two users. The user_id informs the database that the message belongs to a specific user and is indexed by that user_id.
+
+**Listings Relations:**
+
+The listings table contains two foreign keys. A listing belongs to one user, so the user_id informs the database that a particular listing belongs to specific user by that user_id. A listing has one attached image. The listings table image_id points to the active_storage_attachments table in which a foreign key points to the active_storage_blobs table. This blobs table contains the image attached to the listing.
+
+**Line_item/Carts Relations:**
+
+ The Line_items table contains two foreign keys.Listings can have zero to many line_items, a specific line_item can only house one listing. The foreign key informs the database which listing, the line_item pertains to through the listings_id. Finally a cart can have zero to many line_items while a line_item belongs to one cart. The database is informed which cart the specific line_item belongs to through the cart_id foreign key.
+
+### **Roadmap - Whats Next?:**
+
+The current version of Workout Jungle has meet user stories and requirements providing a user-friendly and safe space to buy and sell fitness equipment. However through potential ethical issues and changing landscapes, it is vital that continuous updates and features are rolled out to better optimise the applications full potential and reach maximum market share. The following are planned updates and feature changes to ensure users of Workout Jungle receive the ultimate experience.
+
+**Admin Dashboard:**
+
+1. Division of responsibilities  with introduction of a moderator role. The moderators job will be to handle listings and conversations between users. While the Admin role will conduct oversight on user registrations, admissions and activities.
+1. Staff only chat so all admin and moderatos can discuss day to day operations and security matters.
+1. All admin and moderators will have their own admin username and passwords to introduce a second level of security.
+
+**Users:**
+
+1. Users will have a bio section to their profile
+1. Avatar/Display Picture connected with their profile.
+1. Silent message feature in which users decided to toggle messaging on and off. If off, other users will not be able to message or even search for that user.
+
+**Listings:**
+
+1. The introduction of a search/advanced search system
+1. Users will be able to upload multiple images attached to their listings.
+
+**Chat System:**
+
+1. Notifications which alert users of new conversations and messages from fellow users, admins and moderators.
+1. User will be able to append images through messages.
+1. Emoji system.
+1. Moderators and Admins will have the ability to delete disrespectful messages if found to be breaking any terms and conditions.
 
 ## **References:**
 
