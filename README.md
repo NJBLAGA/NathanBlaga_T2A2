@@ -1,4 +1,4 @@
-# *Marketplace Project - Workout Jungle**
+# **Marketplace Project - Workout Jungle**
 
 ### **Workout Jungle URL: https://workout-jungle.herokuapp.com**
 
